@@ -1,6 +1,6 @@
 FROM eclipse-temurin:21-jdk-alpine
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-COPY . .
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENV APP_HOME /usr/src/app
+COPY target/*.jar $APP_HOME/app.jar
+WORKDIR $APP_HOME
+CMD ["java", "-jar", "app.jar"]

@@ -9,6 +9,6 @@ public class harsha {
     @GetMapping("/")
     public String cipy() {
         System.out.println("cipy printed to console");
-        return "Hello from cipy!"; // This text will now display in the browser
+        return "Now it is working fine"; // This text will now display in the browser
     }
 }
